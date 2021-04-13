@@ -4,6 +4,8 @@ LABEL Glen Stummer <glen@glen.dev>
 ENV TERRAFORM_VERSION=0.14.10
 ENV TERRAFORM_SHA256SUM=45d4a12ca7b5c52983f43837d696f45c5ed9ebe536d6b44104f2edb2e1a39894
 
+COPY entrypoint.sh /entrypoint.sh
+
 RUN apk add --no-cache --virtual .build-deps \
     zip~=3.0 \
     curl~=7.74.0 &&\
@@ -13,8 +15,8 @@ RUN apk add --no-cache --virtual .build-deps \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     mv terraform /bin/terraform && \
     rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    chmod +x /entrypoint.sh && \
     apk del --purge .build-deps
 
-ENTRYPOINT [ "/bin/terraform" ]
-
-CMD ["terraform fmt -check -diff"]
+ENTRYPOINT [ "/entrypoint.sh" ]
+CMD ["."]
