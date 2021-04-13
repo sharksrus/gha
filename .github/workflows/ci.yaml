@@ -16,12 +16,3 @@ jobs:
       - uses: 'ibiqlik/action-yamllint@master'
         with:
           config_file: '.yamllint'
-
-  tf-fmt-hadolint:
-    name: 'hadolint'
-    runs-on: 'ubuntu-latest'
-    steps:
-      - uses: 'actions/checkout@v2'
-      - uses: 'burdzwastaken/hadolint-action@master'
-        with:
-          dockerfile: 'terraform-fmt/Dockerfile'
