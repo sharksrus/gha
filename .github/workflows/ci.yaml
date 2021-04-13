@@ -24,4 +24,4 @@ jobs:
       - uses: 'actions/checkout@v2'
       - uses: 'burdzwastaken/hadolint-action@master'
         with:
-          dockerfile: './terraform-fmt/Dockerfile'
+          dockerfile: 'terraform-fmt/Dockerfile'
