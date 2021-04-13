@@ -1,0 +1,27 @@
+---
+name: 'CI'
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - '*'
+jobs:
+  yamllint:
+    name: 'yamllint'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v2'
+      - uses: 'ibiqlik/action-yamllint@master'
+        with:
+          config_file: '.yamllint'
+
+  hadolint:
+    name: 'hadolint'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v2'
+      - uses: 'burdzwastaken/hadolint-action@master'
+        with:
+          dockerfile: **/Dockerfile
