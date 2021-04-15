@@ -1,0 +1,6 @@
+---
+name: 'tfsec-action'
+description: 'GitHub Action for tfsec'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
