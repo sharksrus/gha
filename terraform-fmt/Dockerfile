@@ -1,4 +1,4 @@
-FROM alpine:3.13.5
+FROM public.ecr.aws/g5p1t6g5/alpine:3.13.5
 LABEL maintainer="Glen Stummer <glen@glen.dev>"
 
 ENV TERRAFORM_VERSION=0.14.10
