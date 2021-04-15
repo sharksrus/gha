@@ -1,5 +1,5 @@
-FROM alpine:3.13.4
-LABEL Glen Stummer <glen@glen.dev>
+FROM alpine:3.13.5
+LABEL maintainer="Glen Stummer <glen@glen.dev>"
 
 ENV TERRAFORM_VERSION=0.14.10
 ENV TERRAFORM_SHA256SUM=45d4a12ca7b5c52983f43837d696f45c5ed9ebe536d6b44104f2edb2e1a39894
