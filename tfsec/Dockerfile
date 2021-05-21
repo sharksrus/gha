@@ -1,7 +1,7 @@
 FROM alpine:3.13.5
 LABEL maintainer="Glen Stummer <glen@glen.dev>"
 
-ENV TFSEC_VERSION=0.39.21
+ENV TFSEC_VERSION=0.39.36
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN apk add --no-cache --virtual .build-deps \
     zip \
